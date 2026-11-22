@@ -229,3 +229,9 @@ html.js [data-reveal].is-in{opacity:1;transform:none}
   html.js [data-reveal]{opacity:1;transform:none}
   .hero-copy>*,.hero-photo-wrap{animation:none!important;opacity:1}
 }
+
+/* Footer social icons */
+.social-links{gap:12px}
+.social-links a{width:46px;height:46px;padding:0;display:grid;place-items:center;border-radius:50%;color:#fff;transition:transform .3s var(--ease),background .25s,color .25s,border-color .25s}
+.social-links a .icon{width:24px;height:24px}
+.social-links a:hover{transform:translateY(-4px) rotate(-6deg)}
