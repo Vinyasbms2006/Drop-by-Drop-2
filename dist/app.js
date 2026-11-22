@@ -230,6 +230,18 @@ if ('IntersectionObserver' in window) {
   }), { threshold: 0.6 });
   document.querySelectorAll('[data-count]').forEach(el => countObserver.observe(el));
 }
+const servicesGrid = document.querySelector('#services-grid');
+const servicesToggle = document.querySelector('.services-toggle-btn');
+servicesToggle.addEventListener('click', () => {
+  const opening = servicesGrid.dataset.collapsed === 'true';
+  servicesGrid.dataset.collapsed = String(!opening);
+  servicesToggle.setAttribute('aria-expanded', String(opening));
+  servicesToggle.querySelector('.toggle-label').textContent = opening ? 'Show fewer' : 'Discover all services';
+  if (!opening) {
+    const top = document.querySelector('#services .section-heading').getBoundingClientRect().top;
+    if (top < 0) document.querySelector('#services').scrollIntoView({ behavior: reduceMotion ? 'instant' : 'smooth' });
+  }
+});
 const siteHeader = document.querySelector('.site-header');
 const onScroll = () => siteHeader.classList.toggle('scrolled', window.scrollY > 24);
 window.addEventListener('scroll', onScroll, { passive: true });

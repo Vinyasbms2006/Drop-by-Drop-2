@@ -235,3 +235,47 @@ html.js [data-reveal].is-in{opacity:1;transform:none}
 .social-links a{width:46px;height:46px;padding:0;display:grid;place-items:center;border-radius:50%;color:#fff;transition:transform .3s var(--ease),background .25s,color .25s,border-color .25s}
 .social-links a .icon{width:24px;height:24px}
 .social-links a:hover{transform:translateY(-4px) rotate(-6deg)}
+
+/* Mobile: "Explore our work" as a visible outlined button */
+@media(max-width:760px){
+  .hero-actions{display:grid;grid-template-columns:1fr;gap:12px;align-items:stretch}
+  .hero-actions .button,.hero-actions .text-link{width:100%;min-height:54px;justify-content:center}
+  .hero-actions .text-link{font-size:.9375rem;border:1.5px solid var(--ink);border-radius:999px;padding:14px 25px;background:transparent;transition:background .25s,color .25s,transform .3s var(--ease)}
+  .hero-actions .text-link:hover,.hero-actions .text-link:active{background:var(--ink);color:#fff;transform:translateY(-2px)}
+  .hero-actions .link-line{display:inline-block;width:14px;height:14px;background:none;border-right:2px solid currentColor;border-top:2px solid currentColor;transform:rotate(45deg) scale(.7);transition:transform .3s var(--ease)}
+  .hero-actions .text-link:hover .link-line{width:14px;transform:rotate(45deg) scale(.7) translate(3px,-3px)}
+}
+@media(min-width:480px) and (max-width:760px){.hero-actions{grid-template-columns:1fr 1fr}}
+
+/* Mobile hero buttons: compact size */
+@media(max-width:760px){
+  .hero-actions{display:flex;flex-wrap:wrap;gap:10px}
+  .hero-actions .button,.hero-actions .text-link{width:auto;min-height:46px;padding:11px 20px;font-size:.875rem}
+  .hero-actions .text-link{gap:8px}
+  .hero-actions .link-line{width:9px;height:9px}
+  .hero-actions .text-link:hover .link-line{width:9px}
+}
+
+/* ---------- Services: collapsed by default ---------- */
+.services-teaser,.services-toggle{display:none}
+html.js .services-toggle{display:flex;justify-content:center;margin-top:30px}
+.services-toggle-btn{background:transparent;color:var(--ink);border:1.5px solid var(--ink);box-shadow:none;gap:12px}
+.services-toggle-btn:hover{color:#fff;border-color:var(--deep)}
+.services-toggle-btn:not(.form-submit):not(.button-small)::after{content:none}
+.services-toggle-btn .icon{width:20px;height:20px;transition:transform .4s var(--ease)}
+.services-toggle-btn[aria-expanded=true] .icon{transform:rotate(180deg)}
+html.js .services-grid[data-collapsed=true] .service-card:nth-child(n+2):not(.services-teaser){display:none}
+.services-grid:not([data-collapsed=true]) .service-card:nth-child(n+2){animation:cardIn .7s var(--ease) both}
+.services-grid:not([data-collapsed=true]) .service-card:nth-child(3){animation-delay:.1s}
+.services-grid:not([data-collapsed=true]) .service-card:nth-child(4){animation-delay:.2s}
+@keyframes cardIn{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@media(min-width:1001px){
+  html.js .services-grid[data-collapsed=true] .services-teaser{display:flex}
+  .services-teaser{grid-column:2/-1;align-self:stretch;flex-direction:column;justify-content:center;gap:14px;padding:36px 44px;border-radius:26px 26px 8px 26px;background:linear-gradient(120deg,var(--mist),#fdf1d6);border:1px solid #ece0c4;animation:cardIn .7s var(--ease) both}
+  .services-teaser h3{font-size:2.1rem;line-height:1.1;font-weight:520}
+  .teaser-kicker{font-size:.75rem;font-weight:700;letter-spacing:.14em;color:var(--blue-dark)}
+  .services-teaser ul{list-style:none;margin:8px 0 0;padding:0;display:flex;gap:14px;flex-wrap:wrap}
+  .services-teaser li{display:flex;align-items:center;gap:10px;background:#fff;padding:8px 18px 8px 8px;border-radius:999px;font-weight:600;font-size:.875rem;box-shadow:0 6px 16px #0a2f3b0f}
+  .services-teaser li span{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--sun-soft);color:var(--deep)}
+  .services-teaser .icon{width:20px;height:20px}
+}
