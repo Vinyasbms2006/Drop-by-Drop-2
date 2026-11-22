@@ -157,7 +157,7 @@ grid.addEventListener('click', event => {
   });
 });
 document.querySelector('#training-photo').addEventListener('click', event => {
-  openDialog('<img class="dialog-cover training-cover" src="assets/page02-01.webp" alt="Training certificate presentation photograph reproduced from the Drop By Drop profile"><div class="dialog-body"><p class="eyebrow">FROM OUR COMPANY PROFILE</p><h2 id="dialog-title">Specialist training</h2><p class="dialog-description">The organisation’s profile includes this training photograph and describes Suchethana’s certification from the Karnataka State Council for Science and Technology (KSCST).</p><p class="dialog-source">Original photograph extracted from page 2 of the supplied PDF.</p></div>', event.currentTarget);
+  openDialog('<img class="dialog-cover training-cover" src="assets/page02-01.webp" alt="Training certificate presentation photograph reproduced from the Drop By Drop profile"><div class="dialog-body"><p class="eyebrow">FROM OUR COMPANY PROFILE</p><h2 id="dialog-title">Specialist training</h2><p class="dialog-description">The organisation’s profile includes this training photograph and describes Suchethana’s certification from the Karnataka State Council for Science and Technology (KSCST).</p></div>', event.currentTarget);
 });
 
 document.querySelectorAll('[data-service]').forEach(link => link.addEventListener('click', () => {
