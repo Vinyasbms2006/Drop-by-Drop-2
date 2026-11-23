@@ -164,6 +164,7 @@ h2 em,.section-heading h2 span{font-style:italic}
 
 /* ---------- Founder ---------- */
 .founder{background:var(--cream)}
+.founder-grid{align-items:start}
 .portrait-frame{border-radius:20px 140px 20px 20px;box-shadow:0 30px 60px #0a2f3b22}
 .founder-visual:after{background:var(--sun-soft);border-radius:20px 120px 20px 20px;top:30px;left:34px;right:-10px}
 .portrait-caption{background:var(--deep);border-radius:16px;font-family:var(--body)}
@@ -172,6 +173,26 @@ h2 em,.section-heading h2 span{font-style:italic}
 .founder-bio{border-top:1px dashed #d8cfba}
 .founder-bio>span{color:var(--clay)}
 .training-link{border-bottom:1px solid var(--sun);padding-bottom:3px}
+.founder .founder-copy>p.story-overview{font-size:1rem;line-height:1.8;margin-top:24px;color:var(--muted)}
+.founder-story{margin-top:26px;padding-top:24px;border-top:1px dashed #d8cfba}
+.story-attribution{padding-left:16px;border-left:3px solid var(--sun);margin-bottom:24px}
+.story-attribution h3{font-family:var(--display);font-size:1.4rem;line-height:1.35;font-style:italic;font-weight:520}
+.story-attribution p{font-family:var(--body);font-size:.875rem;line-height:1.7;font-weight:600;color:var(--blue-dark);margin-top:7px}
+.story-attribution p span{padding-inline:4px}
+.story-preview p,.story-continuation p,.story-credentials p{font-size:1rem;line-height:1.85;color:var(--muted)}
+.story-preview p+p,.story-continuation p+p{margin-top:18px}
+.story-toggle{display:inline-flex;align-items:center;gap:12px;list-style:none;cursor:pointer;min-height:46px;margin-top:22px;padding:10px 19px;border:1px solid var(--ink);border-radius:999px;color:var(--ink);font-family:var(--body);font-size:.9375rem;font-weight:650;line-height:1.5;transition:background .2s,color .2s}
+.story-toggle::-webkit-details-marker{display:none}
+.story-toggle:hover{background:var(--deep);color:#fff}
+.story-toggle .icon{width:18px;height:18px;transition:transform .25s var(--ease)}
+.story-close-label{display:none}
+.story-details[open] .story-open-label{display:none}
+.story-details[open] .story-close-label{display:inline}
+.story-details[open] .story-toggle .icon{transform:rotate(180deg)}
+.story-continuation{margin-top:22px}
+.story-credentials{border-top:1px dashed #d8cfba;margin-top:25px;padding-top:22px}
+.story-credentials .training-link{font-size:.875rem;margin-top:16px;line-height:1.6;text-align:left}
+@media(max-width:760px){.story-attribution h3{font-size:1.3rem}.story-attribution p span{padding-inline:2px}.story-credentials .training-link{max-width:100%}}
 
 /* ---------- Mission ---------- */
 .mission-banner{background:linear-gradient(120deg,#0b86ad,#07617c 60%,#073e55)}
@@ -302,3 +323,10 @@ html.js .services-grid[data-collapsed=true] .service-card:nth-child(n+2):not(.se
   .services-teaser li span{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--sun-soft);color:var(--deep)}
   .services-teaser .icon{width:20px;height:20px}
 }
+
+/* ---------- Floating WhatsApp button ---------- */
+.whatsapp-float{position:fixed;right:20px;bottom:20px;z-index:90;display:grid;place-items:center;width:58px;height:58px;background:#25d366;color:#fff;border-radius:50%;box-shadow:0 10px 26px #0a2f3b40;transition:transform .3s,box-shadow .3s}
+.whatsapp-float:hover{transform:scale(1.08);box-shadow:0 14px 32px #0a2f3b55}
+.whatsapp-float:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.whatsapp-float .icon{width:32px;height:32px}
+@media(max-width:640px){.whatsapp-float{right:14px;bottom:14px;width:54px;height:54px}}
