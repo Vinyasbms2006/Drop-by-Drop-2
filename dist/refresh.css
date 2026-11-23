@@ -123,6 +123,29 @@ h2 em,.section-heading h2 span{font-style:italic}
 .process-list>div:hover{background:#ffffffb3;transform:translateX(6px)}
 .process-list strong{font-family:var(--display);font-size:1.1rem;font-weight:600}
 
+/* ---------- Rainwater filtration technology ---------- */
+.technology{background:var(--cream)}
+.technology-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.technology-card{display:flex;flex-direction:column;min-width:0;background:#fff;border:1px solid var(--line);border-radius:26px 26px 26px 8px;overflow:hidden;transition:transform .4s var(--ease),box-shadow .4s,border-color .3s}
+.technology-card:hover{transform:translateY(-6px);border-color:var(--sun);box-shadow:0 24px 44px #0a2f3b14}
+.technology-image{position:relative;background:#1f3567;aspect-ratio:900/760;overflow:hidden}
+.technology-image img{width:100%;height:100%;object-fit:contain;transition:transform .5s var(--ease)}
+.technology-card:hover .technology-image img{transform:scale(1.035)}
+.technology-tag{position:absolute;left:20px;bottom:18px;max-width:calc(100% - 40px);padding:6px 12px;background:var(--sun-soft);color:var(--deep);border-radius:999px;font-family:var(--body);font-size:.875rem;line-height:1.4;font-weight:600}
+.technology-copy{position:relative;padding:32px 28px 30px;flex:1}
+.technology-icon{position:absolute;right:24px;top:-23px;display:grid;place-items:center;width:46px;height:46px;background:var(--sun-soft);color:var(--deep);border:5px solid #fff;border-radius:15px 15px 15px 4px}
+.technology-icon .icon{width:23px;height:23px}
+.technology-category{font-family:var(--body);font-size:.875rem;line-height:1.5;font-weight:600;letter-spacing:.06em;color:var(--blue-dark);margin-bottom:12px}
+.technology-copy h3{font-size:1.65rem;line-height:1.2;margin-bottom:16px}
+.technology-copy>p:last-child{font-size:1rem;line-height:1.8;color:var(--muted)}
+.technology-bottom{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:34px;padding-top:28px;border-top:1px dashed #d8cfba}
+.technology-bottom p{font-family:var(--display);font-style:italic;font-size:1.2rem;line-height:1.5;color:var(--muted)}
+.technology-contact{flex-shrink:0}
+.technology-contact:not(.form-submit):not(.button-small)::after{content:none}
+@media(min-width:761px) and (max-width:1050px){.navigation{gap:16px;font-size:.8125rem}.navigation .button-small{padding-inline:15px}.header-inner{gap:18px}.technology-grid{gap:16px}.technology-copy{padding:28px 20px 25px}.technology-copy h3{font-size:1.45rem}.technology-category{font-size:.875rem;letter-spacing:0}.technology-tag{left:14px;bottom:14px;padding:5px 10px;max-width:calc(100% - 28px)}}
+@media(min-width:761px) and (max-width:850px){.header-inner .brand{gap:8px}.header-inner .brand strong{font-size:1.25rem}.header-inner .brand img{width:42px;height:42px}.header-inner .brand small{letter-spacing:.08em}.navigation{gap:12px}}
+@media(max-width:760px){.technology-grid{grid-template-columns:1fr;gap:24px}.technology-image{aspect-ratio:6/4}.technology-copy{padding:30px 24px 27px}.technology-copy h3{font-size:1.6rem}.technology-bottom{align-items:flex-start;flex-direction:column;gap:20px;margin-top:28px;padding-top:24px}.technology-bottom p{font-size:1.15rem}.technology-contact{max-width:100%;font-size:.9375rem}.technology .section-intro{font-size:1rem}}
+
 /* ---------- Projects ---------- */
 .projects{background:linear-gradient(180deg,#06252f,#082e3b)}
 .projects .eyebrow{color:var(--sun)}

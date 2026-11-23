@@ -10,12 +10,15 @@ Run `npm start` and open the printed local URL. To use a different port in Power
 
 - `dist/index.html`: page sections, services, leadership, contact details and SEO.
 - `dist/styles.css`: visual design, responsive layouts and reduced-motion support.
+- `dist/refresh.css`: the current cream, teal and gold design, including responsive technology cards.
 - `dist/app.js`: documented project data, filters, accessible dialogs, navigation and enquiry handling.
 - `dist/assets`: images extracted from the supplied PDF and the original downloadable profile.
 
 ## Content provenance
 
 All organisation-specific facts and project photographs come from the supplied 14-page company profile, included at `dist/assets/drop-by-drop-profile.pdf`.
+
+The rainwater filtration section uses the approved text and original product photographs from the supplied 10-page First Flush, Leaf Eater and Maelstrom PDF. Total Rain combines Leaf Eater Stream and a Carrot first-flush diverter (pages 1-2); Maelstrom filtration is described on pages 3-4; First Flush Carrot is described on pages 5-9. Product images retain their original appearance and are cropped from the rendered PDF. These are Rain Harvesting / Blue Mountain Co products; the section does not claim that Drop By Drop manufactures them. The 180-micron specification describes particulate filtration, not water disinfection.
 
 - Suchethana is identified as Director and Rainwater Harvesting Specialist. The PDF does not explicitly identify the founder, so the site uses the documented title.
 - The 90+ borewell recharge figure is explicitly dated to 2024.

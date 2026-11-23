@@ -192,12 +192,12 @@ if ('IntersectionObserver' in window) {
       navigation.querySelectorAll('a').forEach(link => link.classList.toggle('current', link.hash === '#' + entry.target.id));
     });
   }, { rootMargin: '-15% 0px -65% 0px' });
-  document.querySelectorAll('#services, #projects, #story, #contact').forEach(section => observer.observe(section));
+  document.querySelectorAll('#services, #technology, #projects, #story, #contact').forEach(section => observer.observe(section));
 }
 document.querySelector('#year').textContent = new Date().getFullYear();
 /* ---- Motion: scroll reveals, count-up, header state ---- */
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const revealTargets = '.section-heading,.service-card,.community-strip,.water-illustration,.water-copy>*,.project-toolbar,.project-card,.projects-bottom,.founder-visual,.founder-copy>*,.mission-inner>*,.faq-grid>div:first-child>*,.faq-list details,.contact-copy>*,.enquiry-form,.impact-grid>div';
+const revealTargets = '.section-heading,.service-card,.community-strip,.water-illustration,.water-copy>*,.technology-card,.technology-bottom,.project-toolbar,.project-card,.projects-bottom,.founder-visual,.founder-copy>*,.mission-inner>*,.faq-grid>div:first-child>*,.faq-list details,.contact-copy>*,.enquiry-form,.impact-grid>div';
 const revealObserver = 'IntersectionObserver' in window && !reduceMotion ? new IntersectionObserver((entries, obs) => {
   entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-in'); obs.unobserve(entry.target); } });
 }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' }) : null;
