@@ -16,11 +16,13 @@ Run `npm start` and open the printed local URL. To use a different port in Power
 
 ## Content provenance
 
-All organisation-specific facts and project photographs come from the supplied 14-page company profile, included at `dist/assets/drop-by-drop-profile.pdf`.
+Organisation details and project photographs come from the supplied 14-page company profile, included at `dist/assets/drop-by-drop-profile.pdf`, supplemented by the client's personal story and the user's confirmation of Suchethana's role.
 
 The rainwater filtration section uses the approved text and original product photographs from the supplied 10-page First Flush, Leaf Eater and Maelstrom PDF. Total Rain combines Leaf Eater Stream and a Carrot first-flush diverter (pages 1-2); Maelstrom filtration is described on pages 3-4; First Flush Carrot is described on pages 5-9. Product images retain their original appearance and are cropped from the rendered PDF. These are Rain Harvesting / Blue Mountain Co products; the section does not claim that Drop By Drop manufactures them. The 180-micron specification describes particulate filtration, not water disinfection.
 
-- Suchethana is identified as Director and Rainwater Harvesting Specialist. The PDF does not explicitly identify the founder, so the site uses the documented title.
+- The user confirmed that Suchethana is both Founder and Director. His first-person story is clearly attributed, with grammar and phrasing refined while preserving the supplied personal account, rainfall figure and family experience. The client supplied the 25-year history; formal trust registration in 2014 remains a separate fact. The hero experience label uses the same 25-year figure.
+- The full story expands inline using native HTML details/summary, with keyboard support and no JavaScript dependency. Background and credentials remain separate from the first-person narrative.
+- The Adichunchanagiri Institute of Medical Sciences (AIMS, Bellur Cross), SJC College (Chikkaballapur), Sri Lakshmi Enclave (Jakkur) and Purva Atria Apartment (Dollars Colony) entries use separately supplied site photographs, not the profile PDF. Their text describes only what the photographs show; no completion dates, capacities or outcomes are claimed.
 - The 90+ borewell recharge figure is explicitly dated to 2024.
 - Victory Harmony's tanker reduction is described as a reported rainy-season result for that property, not a promise for other sites.
 - Reitzel, Texport and AAMBIS details retain the design/proposal qualifications in the source.

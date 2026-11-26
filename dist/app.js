@@ -61,6 +61,35 @@ const projects = [
     description: 'The profile reports peak-summer water use of two lakh litres a day at AAMBIS Food Factory. With the existing tube well supply falling short, Drop By Drop prepared a customised rainwater harvesting model map for the factory campus. The document describes preparation of the model, rather than a completed installation.',
     facts: [['2 lakh litres / day', 'Reported peak-summer water use']],
     work: ['Prepared a custom rainwater harvesting model map.', 'Planned around the campus’s water supply challenges.'], source: 'Company profile, page 8. Proposed benefits are not presented here as measured results.'
+  },
+  {
+    id: 'aims-bellur', title: 'Adichunchanagiri Institute of Medical Sciences (AIMS)', location: 'Bellur Cross', category: 'education', tag: 'EDUCATIONAL INSTITUTION', image: 'project-aims-recharge-pond.webp',
+    gallery: [{ image: 'project-aims-filter-chambers.webp', alt: 'Filter chambers and a covered ring structure beside a borewell at AIMS, Bellur Cross' }],
+    summary: 'Rainwater collection and recharge structures for a medical college campus.', highlight: 'Recharge pond · filter chambers', status: 'Site work photographed',
+    description: 'Site photographs from the Adichunchanagiri Institute of Medical Sciences (AIMS) at Bellur Cross show a stone-lined pond holding rainwater, along with filter chambers and a ring structure built beside a borewell.',
+    facts: [['Collection & recharge', 'Pond and chamber structures']],
+    work: ['Stone-lined pond to collect rainwater.', 'Filter chambers and a covered ring structure beside a borewell.'], source: 'Drop By Drop project photographs.'
+  },
+  {
+    id: 'sjc-chikkaballapur', title: 'SJC College', location: 'Chikkaballapur', category: 'education', tag: 'EDUCATIONAL INSTITUTION', image: 'project-sjc-chikkaballapur.webp',
+    summary: 'Rooftop rainwater collection fitted to a campus building.', highlight: 'Rooftop collection & first flush', status: 'Site work photographed',
+    description: 'Site photographs from SJC, Chikkaballapur show rooftop downpipes connected to first-flush pipework along the building and routed onward for collection.',
+    facts: [['Rooftop system', 'Downpipes with first-flush pipework']],
+    work: ['Connected rooftop downpipes into a collection line.', 'Fitted first-flush pipework with a drain valve.'], source: 'Drop By Drop project photograph.'
+  },
+  {
+    id: 'sri-lakshmi-enclave', title: 'Sri Lakshmi Enclave', location: 'Jakkur, Bengaluru', category: 'residential', tag: 'RESIDENTIAL COMMUNITY', image: 'project-sri-lakshmi-enclave.webp',
+    summary: 'Wall-mounted rainwater filtration for a residential property.', highlight: 'Rooftop collection & filtration', status: 'Site work photographed',
+    description: 'Site photographs from Sri Lakshmi Enclave in Jakkur show wall-mounted pipework that brings rainwater through first-flush and filter fittings, next to a covered circular chamber.',
+    facts: [['Rooftop system', 'Wall-mounted filtration pipework']],
+    work: ['Routed rainwater pipework along the property walls.', 'Fitted first-flush and filter assemblies with a drain valve.'], source: 'Drop By Drop project photograph.'
+  },
+  {
+    id: 'purva-atria', title: 'Purva Atria Apartment', location: 'Dollars Colony, Bengaluru', category: 'residential', tag: 'APARTMENT COMMUNITY', image: 'project-purva-atria.webp', coverPosition: 'center 72%',
+    summary: 'On-site rainwater work within an apartment community.', highlight: 'Ring-lined well on site', status: 'Site work photographed',
+    description: 'A site photograph from Purva Atria Apartment in Dollars Colony shows a concrete ring-lined well opened for inspection in the garden area, with its circular covers alongside.',
+    facts: [['Apartment site', 'Ring-lined well with circular covers']],
+    work: ['Concrete ring-lined well in the garden area.', 'Circular covers for the ring structure.'], source: 'Drop By Drop project photograph.'
   }
 ];
 
@@ -146,10 +175,10 @@ grid.addEventListener('click', event => {
   if (!opener) return;
   const project = projects.find(item => item.id === opener.dataset.project);
   if (!project) return;
-  openDialog(`<img class="dialog-cover" src="assets/${project.image}" alt="${escapeHTML(project.title)} project photograph"><div class="dialog-body">
+  openDialog(`<img class="dialog-cover" style="object-position:${project.coverPosition || 'center'}" src="assets/${project.image}" alt="${escapeHTML(project.title)} project photograph"><div class="dialog-body">
     <p class="eyebrow">${project.tag}</p><h2 id="dialog-title">${escapeHTML(project.title)}</h2><p class="dialog-location">${escapeHTML(project.location)}</p><span class="dialog-status">${escapeHTML(project.status)}</span>
     <p class="dialog-description">${escapeHTML(project.description)}</p><div class="dialog-facts">${project.facts.map(([value, label]) => `<div><strong>${escapeHTML(value)}</strong>${escapeHTML(label)}</div>`).join('')}</div>
-    <h3>The approach</h3><ul>${project.work.map(item => `<li>${escapeHTML(item)}</li>`).join('')}</ul><p class="dialog-source">${escapeHTML(project.source)}</p><a class="button dialog-contact" href="#contact">Discuss a similar project</a></div>`, opener);
+    <h3>The approach</h3><ul>${project.work.map(item => `<li>${escapeHTML(item)}</li>`).join('')}</ul>${(project.gallery || []).map(photo => `<img class="dialog-photo" src="assets/${photo.image}" alt="${escapeHTML(photo.alt)}" loading="lazy">`).join('')}<p class="dialog-source">${escapeHTML(project.source)}</p><a class="button dialog-contact" href="#contact">Discuss a similar project</a></div>`, opener);
   dialogContent.querySelector('.dialog-contact').addEventListener('click', () => {
     closeDialog();
     const type = project.category === 'education' ? 'School or institution' : project.category === 'residential' ? 'Home or apartment' : 'Business or industry';
